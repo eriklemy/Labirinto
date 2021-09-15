@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "../Pilhas/Pilha.h"
-#include "../Pilhas/Pilha.cpp"
+#include "Pilhas/Pilha.h"
 
 using namespace std;
 

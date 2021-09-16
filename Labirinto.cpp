@@ -8,7 +8,7 @@ bool Labirinto::solve(int x, int y) {
         cout << "Saida   (" << x << ", " << y << ") " << endl;
         return true; // saida encontrada
     } 
-        
+    
     // marca o caminho
     labirinto[x][y] = '*';
     

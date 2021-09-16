@@ -23,13 +23,13 @@ class Labirinto {
             labirinto[x][y] = '*';
             
             // checa as direções - se retornar true é pq encontrou um caminho
-            if (available(x - 1, y) && solve(x - 1, y)) // para direita
+            if (available(x - 1, y) && solve(x - 1, y)) // para cima
+                return true; //  px.push() py.push()
+            if (available(x + 1, y) && solve(x + 1, y)) // para baixo
                 return true;
-            if (available(x + 1, y) && solve(x + 1, y)) // para esquerda
-                return true;
-            if (available(x, y - 1) && solve(x, y - 1)) // para cima
+            if (available(x, y - 1) && solve(x, y - 1)) // para esquerda
                  return true;
-            if (available(x, y + 1) && solve(x, y + 1)) // para baixo
+            if (available(x, y + 1) && solve(x, y + 1)) // para direita
 				return true;
 
             // se nenhum caminho for encontrado retorna falso

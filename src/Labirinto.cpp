@@ -1,4 +1,5 @@
 #include "Pilha.h"
+#include "Pilha.cpp"
 #include "Labirinto.h"
 #include <chrono> // std::chrono::microseconds
 #include <thread> // std::this_thread::sleep_for

@@ -1,6 +1,5 @@
 #include "src/Labirinto.h"
 #include "src/Labirinto.cpp"
-#include "src/Pilha.cpp"
 
 void Start(){
 	cout << "===================================" << endl;

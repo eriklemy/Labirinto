@@ -1,7 +1,6 @@
-#include <chrono> // std::chrono::mililiseconds
-#include <thread> // std::this_thread::sleep_for
-#include "Labirinto.h"
-#include "Labirinto.cpp"
+#include "src/Labirinto.h"
+#include "src/Labirinto.cpp"
+#include "src/Pilha.cpp"
 
 void Start(){
 	cout << "===================================" << endl;

@@ -1,9 +1,11 @@
-#include "src/Pilha.h"
-#include "src/Pilha.cpp"
+#include "Pilha.h"
 #include "Labirinto.h"
+#include <chrono> // std::chrono::microseconds
+#include <thread> // std::this_thread::sleep_for
 #include <iostream>
 
 using namespace std;
+
 Labirinto::Labirinto(vector<string> lab){
     labirinto = lab;
 };

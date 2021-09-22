@@ -1,5 +1,5 @@
-#include "Pilhas/Pilha.h"
-#include "Pilhas/Pilha.cpp"
+#include "src/Pilha.h"
+#include "src/Pilha.cpp"
 #include "Labirinto.h"
 #include <iostream>
 

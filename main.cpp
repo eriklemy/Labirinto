@@ -34,6 +34,7 @@ int main(){
                     "XXXXXXXXXXXXXXXXXXXSX"
                 });
     Start();
+    cout << "\033[1;31m	ENTRADA (10, 0)\033[0m" << endl;
     if(labirinto.solve(10, 0)) {         
       	labirinto.showLab();
         cout << "\033[1;31mCAMINHO ENCONTRADO!!\033[0m" << endl;

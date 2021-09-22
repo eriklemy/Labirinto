@@ -45,8 +45,8 @@ class Labirinto {
         }
 
         void showLab(){
-            for(int x = 0; x <= labirinto.size(); ++x) {
-                for(int y = 0; y <= labirinto[x].size(); y++)
+            for(int x = 0; x < labirinto.size(); ++x) {
+                for(int y = 0; y < labirinto[x].size(); y++)
                     cout << labirinto[x][y];
                 cout << endl;
             }
@@ -81,8 +81,8 @@ int main(){
 
     cout << "Entrada (10, 0) " << endl;
     if(lab.solve(10, 0)) { //  funciona
-        cout << "CAMINHO ENCONTRADO!!" << endl;
       	lab.showLab();
+        cout << "CAMINHO ENCONTRADO!!" << endl;
     } else cout << "NENHUM CAMINHO ENCONTRADO!!" << endl;
 }
 

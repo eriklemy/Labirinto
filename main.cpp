@@ -1,5 +1,5 @@
-#include <src/Labirinto.h>
-#include <src/Labirinto.cpp>
+#include "src/Labirinto.h"
+#include "src/Labirinto.cpp"
 
 void Start(){
 	cout << "===================================" << endl;

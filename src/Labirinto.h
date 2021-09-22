@@ -1,8 +1,7 @@
 #ifndef LABIRINTO_H
 #define LABIRINTO_H
-
-#include <string>
 #include <vector>
+#include <string>
 
 class Labirinto {
     private:

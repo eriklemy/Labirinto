@@ -1,11 +1,9 @@
-#include "Pilha.h"
-#include "Pilha.cpp"
-#include "Labirinto.h"
 #include <chrono> // std::chrono::microseconds
 #include <thread> // std::this_thread::sleep_for
 #include <iostream>
-
-using namespace std;
+#include "Pilha.h"
+#include "Pilha.cpp"
+#include "Labirinto.h"
 
 Labirinto::Labirinto(vector<string> lab){
     labirinto = lab;
@@ -22,9 +20,9 @@ bool Labirinto::solve(int x, int y) {
         y = py.topo();
         labirinto[x][y] = '*';
 
-        showLab();
-        this_thread::sleep_for(chrono::milliseconds(10));
-        system("CLS");
+        // showLab();
+        // this_thread::sleep_for(chrono::milliseconds(10));
+        // system("CLS");
 
         if(labirinto[x][y + 1] != 'X' && available(x, y + 1)) { // direita
             px.push(x);

@@ -1,6 +1,7 @@
 #include <iostream>
-#include <string>
 #include <vector>
+#include <chrono> // std::chrono::microseconds
+#include <thread> // std::this_thread::sleep_for
 
 using namespace std;
 
@@ -17,7 +18,10 @@ class Labirinto {
                 cout << "Saida   (" << x << ", " << y << ") " << endl;
                 return true; // saida encontrada
             } 
-                
+            
+            // showLab();
+            // this_thread::sleep_for(chrono::milliseconds(10));
+            // system("CLS");
             // marca o caminho
             labirinto[x][y] = '*';
             
@@ -46,7 +50,15 @@ class Labirinto {
         void showLab(){
             for(int x = 0; x < labirinto.size(); ++x) {
                 for(int y = 0; y < labirinto[x].size(); y++)
-                    cout << labirinto[x][y];
+                  	if(labirinto[x][y] == '-'){
+                    	cout << ' ';
+                    	continue;
+                  	}else{
+						if(labirinto[x][y] == '*')
+							cout << "\033[1;31m*\033[0m";
+						else
+                    		cout << labirinto[x][y];
+                  	}
                 cout << endl;
             }
         }
@@ -54,8 +66,17 @@ class Labirinto {
         auto getLabSize() { return labirinto; }
 };
 
+void Start(){
+	cout << "===================================" << endl;
+	cout << "|         PROJETO LABIRINTO       |" << endl;
+	cout << "|            PATH FINDER          |" << endl;
+	cout << "| ERICK LEMMY DOS SANTOS OLIVEIRA |" << endl;
+	cout << "===================================" << endl;
+	this_thread::sleep_for(chrono::milliseconds(1500));
+}
+
 int main(){
-    Labirinto lab({
+    Labirinto labirinto({
                     "XXXXXXXXXXXXXXXXXXXXX",
                     "X     X     X     X X",
                     "XX XX XXXXX X X X   X",
@@ -78,26 +99,11 @@ int main(){
                     "XXXXXXXXXXXXXXXXXXXSX"
                 });
 
-    cout << "Entrada (10, 0) " << endl;
-    if(lab.solve(10, 0)) { //  funciona
-      	lab.showLab();
-        cout << "CAMINHO ENCONTRADO!!" << endl;
-    } else cout << "NENHUM CAMINHO ENCONTRADO!!" << endl;
+    Start();
+    cout << "\033[1;31m	ENTRADA (10, 0)\033[0m" << endl;
+    if(labirinto.solve(10, 0)) {         
+      	labirinto.showLab();
+        cout << "\033[1;31mCAMINHO ENCONTRADO!!\033[0m\n";
+	} else 
+        cout << "NENHUM CAMINHO ENCONTRADO!!" << endl;
 }
-
-/*
-A estrutura de dados PILHA pode ser usada para implementar isso.
-A ideia é partir de um ponto E ("entrada") e escolher arbitrariamente uma das suas conexões para a 
-busca do ponto S ("saída"), armazenando o novo ponto a que se chegou na pilha. 
-Assim, prossegue-se até que não seja mais possível partir para um novo caminho ou até que o ponto S 
-seja atingido. No primeiro caso, deve-se retornar a um ponto anterior a partir do qual novos caminhos 
-podem ser possíveis. Isto é feito retirando-se o último elemento da pilha. 
-Este procedimento é repetido até voltar a um ponto a partir do qual caminhos não explorados podem ser 
-tentados ou até voltar ao início (ponto E).
-Nesse caso, se não hover mais outras opções de caminho saindo de E, é porque S não existe.
-
-
-calcule e mostre na tela o caminho de "E" a "S" (marcando o caminho com asteriscos
-O caractere "X" na matriz labirinto corresponde a uma "parede". 
-Assim, se labirinto[x][y] == 'X' (0≤x<20 e 0≤y<21), então esta posição não deve ser percorrida.
-*/

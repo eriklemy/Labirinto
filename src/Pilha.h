@@ -3,14 +3,13 @@
 #include <array>
 
 // cria uma constante
-constexpr int MAXPILHA = 25;
-using TipoDado = char; // equivalente a typedef
+constexpr int MAXPILHA = 100;
+using TipoDado = char; 
 
 class Pilha {
     private:
         // atributos
-        // TipoDado dados[MAXPILHA]; // normal
-        std::array<TipoDado, MAXPILHA> dados; // cool mode
+        std::array<TipoDado, MAXPILHA> dados;
         int topo_;
         
     public:

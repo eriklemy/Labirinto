@@ -1,9 +1,19 @@
-#include "Pilhas/Pilha.h"
+#include <chrono> // std::chrono::mililiseconds
+#include <thread> // std::this_thread::sleep_for
 #include "Labirinto.h"
 #include "Labirinto.cpp"
 
+void Start(){
+	cout << "===================================" << endl;
+	cout << "|      PROJETO LABIRINTO (PEDA)   |" << endl;
+	cout << "|            PATH FINDER          |" << endl;
+	cout << "| ERICK LEMMY DOS SANTOS OLIVEIRA |" << endl;
+	cout << "===================================" << endl;
+	this_thread::sleep_for(chrono::milliseconds(1500));
+}
+
 int main(){
-    Labirinto lab({
+    Labirinto labirinto({
                     "XXXXXXXXXXXXXXXXXXXXX",
                     "X     X     X     X X",
                     "XX XX XXXXX X X X   X",
@@ -23,12 +33,13 @@ int main(){
                     "X X   X X   X   X   X",
                     "X XXX XXXXXXXXX XXX X",
                     "X                 X X",
-                    "XXXXXXXXXXXXXXXXXXXSX"
+                    "XXXXXXXXXXXXXXXXXXXXX"
                 });
 
-    cout << "Entrada (10, 0) " << endl;
-    if(lab.solve(10, 0)) { //  funciona
-        cout << "CAMINHO ENCONTRADO!!" << endl;
-      	lab.showLab();
+    Start();
+    cout << "\033[1;31mENTRADA (10, 0)!!\033[0m" << endl;
+    if(labirinto.solve(10, 0)) {         
+      	labirinto.showLab();
+        cout << "\033[1;31mCAMINHO ENCONTRADO!!\033[0m" << endl;
     } else cout << "NENHUM CAMINHO ENCONTRADO!!" << endl;
 }

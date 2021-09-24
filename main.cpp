@@ -1,13 +1,15 @@
+#include <iostream>
 #include "src/Labirinto.h"
-#include "src/Labirinto.cpp"
 
-void Start(){
+using namespace std;
+
+void start(){
 	cout << "===================================" << endl;
-	cout << "|         PROJETO LABIRINTO       |" << endl;
-	cout << "|            PATH FINDER          |" << endl;
+	cout << "|         PROJETO - PEDA          |" << endl;
+	cout << "|     LABIRINTO USANDO PILHA      |" << endl;
+	cout << "|           PATH FINDER           |" << endl;
 	cout << "| ERICK LEMMY DOS SANTOS OLIVEIRA |" << endl;
 	cout << "===================================" << endl;
-	this_thread::sleep_for(chrono::milliseconds(1500));
 }
 
 int main(){
@@ -33,11 +35,16 @@ int main(){
                     "X                 X X",
                     "XXXXXXXXXXXXXXXXXXXSX"
                 });
-    Start();
-    cout << "\033[1;31m	ENTRADA (10, 0)\033[0m" << endl;
-    if(labirinto.solve(10, 0)) {         
+    
+    int entradaX = 10;
+    int entradaY = 0;
+    
+    start();
+    
+    cout << "ENTRADA (" << entradaX << ", " << entradaY << ")"<< endl;
+    if(labirinto.solve(entradaX, entradaY)) {         
       	labirinto.showLab();
-        cout << "\033[1;31mCAMINHO ENCONTRADO!!\033[0m" << endl;
+        cout << "\033[1;31mCAMINHO ENCONTRADO!!!\033[0m" << endl; // \033[1;31m Letra em Vermelho \033[0m
     } else 
         cout << "NENHUM CAMINHO ENCONTRADO!!" << endl;
 }

@@ -9,7 +9,7 @@ class Labirinto {
         int sizeX = labirinto.size();
 		int sizeY = labirinto[0].size();
     public:
-        Labirinto(std::vector<std::string> lab);
+        Labirinto(const std::vector<std::string> &lab);
         bool solve(int x, int y);
         bool available(int x, int y);
         void showLab();

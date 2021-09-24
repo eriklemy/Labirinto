@@ -3,7 +3,7 @@
 #include <array>
 
 // cria uma constante
-constexpr int MAXPILHA = 100;
+constexpr int MAXPILHA = 256;
 using TipoDado = char; 
 
 class Pilha {

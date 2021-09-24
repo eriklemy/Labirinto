@@ -1,11 +1,12 @@
-#include <chrono> // std::chrono::microseconds
-#include <thread> // std::this_thread::sleep_for
 #include <iostream>
 #include "Pilha.h"
-#include "Pilha.cpp"
 #include "Labirinto.h"
+// #include <chrono> // std::chrono::microseconds
+// #include <thread> // std::this_thread::sleep_for
 
-Labirinto::Labirinto(vector<string> lab){
+using namespace std;
+
+Labirinto::Labirinto(const vector<string> &lab){
     labirinto = lab;
 };
 
@@ -15,7 +16,6 @@ bool Labirinto::solve(int x, int y) {
     py.push(y);
 
     while(labirinto[x][y] != 'S' && !px.vazia() && !py.vazia()) {
-        cout << "-----   (" << x << ", " << y << ") " << endl;
         x = px.topo();
         y = py.topo();
         labirinto[x][y] = '*';
@@ -47,14 +47,10 @@ bool Labirinto::solve(int x, int y) {
             px.pop();
             py.pop();
             labirinto[x][y] = '-';
-            cout << "Saida   (" << px.topo() << ", " << py.topo() << ") " << endl;
-
         }
     }            
-    if(px.vazia() && py.vazia())
-        return false;
     cout << "SAIDA  (" << x << ", " << y << ") " << endl;
-    return true;
+    return (!px.vazia() && !py.vazia());
 };
 
 bool Labirinto::available(int x, int y) {
@@ -65,16 +61,17 @@ bool Labirinto::available(int x, int y) {
 
 void Labirinto::showLab(){
     for(int x = 0; x < labirinto.size(); ++x) {
-        for(int y = 0; y < labirinto[x].size(); y++)
+        for(int y = 0; y < labirinto[x].size(); y++){
             if(labirinto[x][y] == '-'){
                 cout << ' ';
                 continue;
             } else {
                 if(labirinto[x][y] == '*')
-                    cout << "\033[1;31m*\033[0m";
+                    cout << "\033[41;1;37m*\033[0m"; // \033[41;1;37m Fundo Vermelho \033[0m
                 else
                     cout << labirinto[x][y]; 
             }
             cout << endl;
         }
+    }
 };

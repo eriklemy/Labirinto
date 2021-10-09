@@ -56,6 +56,6 @@ Labirinto labirinto({
 
 # Saida 
 - saida 1 <br>
-![Screenshot](screenshot_1.png)
+![Screenshot](https://cdn.discordapp.com/attachments/840637212126347264/896536414118899722/screenshot_1.png)
 - saida 2 <br>
-![Screenshot](screenshot_2.png)
+![Screenshot](https://cdn.discordapp.com/attachments/840637212126347264/896536417721782302/screenshot_2.png)

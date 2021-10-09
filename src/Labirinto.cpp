@@ -20,6 +20,9 @@ bool Labirinto::solve(int x, int y) {
         y = py.topo();
         labirinto[x][y] = '*';
 
+        // mostra o progresso da busca
+        // PS: Em comentario pois para labirintos grandes e sem saida pode demorar demais 
+        
         // showLab();
         // this_thread::sleep_for(chrono::milliseconds(10));
         // system("CLS");
@@ -53,7 +56,7 @@ bool Labirinto::solve(int x, int y) {
     return (!px.vazia() && !py.vazia());
 };
 
-bool Labirinto::available(int x, int y) {
+bool Labirinto::availablePath(int x, int y) {
     return (x >= 0 && x < labirinto.size()
             && y >= 0 && y < labirinto[x].size()
             && (labirinto[x][y] == ' ' || labirinto[x][y] == 'S'));

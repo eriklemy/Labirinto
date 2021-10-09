@@ -1,3 +1,9 @@
+/*
+*  PEDA - PROGRAMAÇÃO COM ESTRUTURAS DE DADOS AVANÇADAS
+*  PROJETO LABIRINTO USANDO PILHA
+*  ALUNO: ERICK LEMMY DOS SANTOS OLIVEIRA
+*  ENNHARIA DE COMPUTAÇÃO
+*/
 #include <iostream>
 #include "src/Labirinto.h"
 
@@ -13,6 +19,8 @@ void start(){
 }
 
 int main(){
+    int entradaX = 10;
+    int entradaY = 0;
     Labirinto labirinto({
                     "XXXXXXXXXXXXXXXXXXXXX",
                     "X     X     X     X X",
@@ -35,9 +43,6 @@ int main(){
                     "X                 X X",
                     "XXXXXXXXXXXXXXXXXXXSX"
                 });
-    
-    int entradaX = 10;
-    int entradaY = 0;
     
     start();
     

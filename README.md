@@ -1,7 +1,7 @@
 
 # Projeto 1 - PEDA
-- LABIRINTO
-- Erick Lemmy dos Santos Oliveira
+Programação com Estruturas de Dados Avançadas <br>
+Solução de Labirinto usando a estrutura Pilha <br>
 
 # Entregue 
 - 23/09/2021 
@@ -59,3 +59,4 @@ Labirinto labirinto({
 ![Screenshot](https://cdn.discordapp.com/attachments/840637212126347264/896536414118899722/screenshot_1.png)
 - saida 2 <br>
 ![Screenshot](https://cdn.discordapp.com/attachments/840637212126347264/896536417721782302/screenshot_2.png)
+
